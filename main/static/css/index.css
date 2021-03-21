@@ -1,0 +1,20 @@
+.YT_EMBED{
+
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.TWITCH_EMBED{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.TWITTER_EMBED{
+
+    display: flex;
+    justify-content: flex-end;
+
+}

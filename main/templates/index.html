@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{%  block content %}
+<h1>HELLO FROM INDEX</h1>
+
+<!-- STREAM EMBED -->
+
+<div class="TWITCH_EMBED">
+
+    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+    <div id="<player div ID>"></div>
+    <script type="text/javascript">
+    var options = {
+        width: 800,
+        height: 500,
+        channel: "fiendriver",
+    };
+    var player = new Twitch.Player("<player div ID>", options);
+    player.setVolume(0.5);
+    </script>
+
+</div>
+
+<!-- LATEST YOUTUBE VIDEO EMBED -->
+
+<div class=YT_EMBED>
+
+    <iframe class="latestVideoEmbed" vnum='0' cid="UC1gEY9wgPqD0ak3Jp6jYDww" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+    function loadVideo(iframe) {
+    $.getJSON(reqURL + iframe.getAttribute('cid'),
+        function(data) {
+        var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+        console.log(videoNumber);
+        var link = data.items[videoNumber].link;
+        id = link.substr(link.indexOf("=") + 1);
+        iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+        }
+    );
+    }
+    var iframes = document.getElementsByClassName('latestVideoEmbed');
+    for (var i = 0, len = iframes.length; i < len; i++) {
+    loadVideo(iframes[i]);
+    }
+    </script>
+
+</div>
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/channel/UC1gEY9wgPqD0ak3Jp6jYDww/live" frameborder="0" allowfullscreen></iframe> -->
+
+<!-- SOCIALS PANEL -->
+
+<a href="https://www.youtube.com/FiendRiver">YOUTUBE 900 SUBSCRIBERS</a>
+<a href="https://www.twitter.com/FiendRiver">TWITTER 1.3K FOLLOWERS</a>
+<a href="https://www.twitch.tv/FiendRiver">TWITCH 3K FOLLOWERS </a>
+<a href="https://www.instagram.com/FiendRiver">INSTAGRAM</a>
+
+
+
+
+<!-- ABOUT ME -->
+
+<div class="about">
+    <p>
+        I am FiendRiver (Dōv/Joe)! <br>
+        Professional Competitive Pokémon Master <br>
+        National Pokémon Champion (2015-2019) <br>
+        Nintendo Israel Ambassador <br>
+    </p>
+
+</div>
+
+<!-- PARTNERS -->
+
+<!-- TWITTER FEED EMBED -->
+
+<div class = TWITTER_EMBED>
+
+    <a class="twitter-timeline" data-width="400" data-height="600" data-theme="dark" href="https://twitter.com/FiendRiver?ref_src=twsrc%5Etfw">Tweets by FiendRiver</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</div>
+<!-- CONTACT FORM -->
+
+
+
+{% endblock %}

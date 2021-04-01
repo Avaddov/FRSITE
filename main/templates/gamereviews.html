@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{%  block css %}
+
+{% endblock %}
+
+{%  block content %}
+
+<div class="container">
+
+{% for GameReview in gamereviews %}
+{{GameReview.game_title}}
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+{% endblock %}

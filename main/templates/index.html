@@ -1,74 +1,201 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{%  block css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 {%  block content %}
-<h1>HELLO FROM INDEX</h1>
 
+
+<div class="container">
+
+
+
+
+  <h1 style="color: aliceblue;">HELLO FROM INDEX</h1>
+
+  <div class="row">
 <!-- STREAM EMBED -->
+    <div class= "twitch_embed">
 
-<div class="TWITCH_EMBED">
+      <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+      <div id="<player div ID>"></div>
+      <script type="text/javascript">
+      var options = {
+          width: 1280,
+          height: 800,
+          channel: "fiendriver",
+      };
+      var player = new Twitch.Player("<player div ID>", options);
+      player.setVolume(0.5);
+      </script>
 
-    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-    <div id="<player div ID>"></div>
-    <script type="text/javascript">
-    var options = {
-        width: 800,
-        height: 500,
-        channel: "fiendriver",
-    };
-    var player = new Twitch.Player("<player div ID>", options);
-    player.setVolume(0.5);
-    </script>
+    </div>
 
-</div>
 
-<!-- LATEST YOUTUBE VIDEO EMBED -->
+  </div>
 
-<div class=YT_EMBED>
+  <div class="row">
+    <div class="col-2">
 
-    <iframe class="latestVideoEmbed" vnum='0' cid="UC1gEY9wgPqD0ak3Jp6jYDww" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-    var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-    function loadVideo(iframe) {
-    $.getJSON(reqURL + iframe.getAttribute('cid'),
-        function(data) {
-        var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-        console.log(videoNumber);
-        var link = data.items[videoNumber].link;
-        id = link.substr(link.indexOf("=") + 1);
-        iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+      <div class="row m-2">
+        <div class="col my-2">
+          <div class="card">
+            <img src="static\img\yt-card.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">YouTube</h5>
+              <p class="card-text"><a href="https://www.youtube.com/FiendRiver"target="_blank">900 SUBSCRIBERS</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col my-2">
+          <div class="card">
+            <img src="static\img\twitch-card.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Twitch</h5>
+              <p class="card-text"><a href="https://www.twitch.tv/FiendRiver"target="_blank">3K FOLLOWERS</a></p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="col-8">
+      <div class= "yt_embed">
+
+        <iframe class="latestVideoEmbed" vnum='0' cid="UC1gEY9wgPqD0ak3Jp6jYDww" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+        function loadVideo(iframe) {
+        $.getJSON(reqURL + iframe.getAttribute('cid'),
+            function(data) {
+            var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+            console.log(videoNumber);
+            var link = data.items[videoNumber].link;
+            id = link.substr(link.indexOf("=") + 1);
+            iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+            }
+        );
         }
-    );
-    }
-    var iframes = document.getElementsByClassName('latestVideoEmbed');
-    for (var i = 0, len = iframes.length; i < len; i++) {
-    loadVideo(iframes[i]);
-    }
-    </script>
+        var iframes = document.getElementsByClassName('latestVideoEmbed');
+        for (var i = 0, len = iframes.length; i < len; i++) {
+        loadVideo(iframes[i]);
+        }
+        </script>
+    
+    </div>
+      
+    </div>
+    <div class="col-2">
+      <div class="row m-2" >
+        <div class="col my-2">
+          <div class="card">
+            <img src="static\img\twitter-card.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Twitter</h5>
+              <p class="card-text"><a href="https://www.twitter.com/FiendRiver"target="_blank">1.3K FOLLOWERS</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col my-2">
+          <div class="card">
+            <img src="static\img\insta-card.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Instagram</h5>
+              <p class="card-text"><a href="https://www.instagram.com/FiendRiver"target="_blank">400+ FOLLOWERS</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
 
-</div>
+
+
+  </div>
+
+
+
+
+  <div class="row">
+      <div class="col-8">
+        <div id="about-card">
+          <div class="row g-0 bg-dark position-relative">
+            <div class="col-md-6 mb-md-0 p-md-4">
+              <img src="/static/img/PFP.jpg" class="w-100" alt="...">
+            </div>
+            <div class="col-md-6 p-4 ps-md-0">
+              <h5 class="mt-0">Columns with stretched link</h5>
+              <p style="color: aliceblue;">        I am FiendRiver (Dōv/Joe)! <br>
+                Professional Competitive Pokémon Master <br>
+                National Pokémon Champion (2015-2019) <br>
+                Nintendo Israel Ambassador <br></p>
+              <a href="#" class="stretched-link">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class = >
+
+          <a class="twitter-timeline" data-width="800" data-height="500" data-theme="dark" href="https://twitter.com/FiendRiver?ref_src=twsrc%5Etfw">Tweets by FiendRiver</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
+      </div>
+      </div>
+
+
+
+
+  </div>
+
+
+
+
+
 
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/channel/UC1gEY9wgPqD0ak3Jp6jYDww/live" frameborder="0" allowfullscreen></iframe> -->
 
 <!-- SOCIALS PANEL -->
 
-<a href="https://www.youtube.com/FiendRiver">YOUTUBE 900 SUBSCRIBERS</a>
-<a href="https://www.twitter.com/FiendRiver">TWITTER 1.3K FOLLOWERS</a>
-<a href="https://www.twitch.tv/FiendRiver">TWITCH 3K FOLLOWERS </a>
-<a href="https://www.instagram.com/FiendRiver">INSTAGRAM</a>
 
 
+
+
+                
+
+ 
+                
+    
+                
+    
+            
+     
+
+
+
+
+
+
+
+<div id="card-container">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+      
+
+    </div>
+</div>
 
 
 <!-- ABOUT ME -->
 
-<div class="about">
+
+
+<div class="about" style="color: white; font-weight: 600;">
     <p>
-        I am FiendRiver (Dōv/Joe)! <br>
-        Professional Competitive Pokémon Master <br>
-        National Pokémon Champion (2015-2019) <br>
-        Nintendo Israel Ambassador <br>
+
     </p>
 
 </div>
@@ -77,13 +204,36 @@
 
 <!-- TWITTER FEED EMBED -->
 
-<div class = TWITTER_EMBED>
 
-    <a class="twitter-timeline" data-width="400" data-height="600" data-theme="dark" href="https://twitter.com/FiendRiver?ref_src=twsrc%5Etfw">Tweets by FiendRiver</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-</div>
 <!-- CONTACT FORM -->
 
 
 
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
+
+
+
+
+
+<script src="{% static 'js/index.js' %}"></script>
+
+</div>
 {% endblock %}
+
+
+
+
+
+    
+    
+    
+
+    

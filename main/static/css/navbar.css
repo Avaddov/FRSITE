@@ -1,3 +1,4 @@
+
 :root {
     --navbar-bg-color: hsl(0, 0%, 15%);
     --navbar-text-color: hsl(0, 0%, 85%);
@@ -75,10 +76,12 @@ body {
 .navbar-link:hover {
     color: var(--navbar-text-color-focus);
     background-color: var(--navbar-bg-contrast);
+    /* background-image: url('../img/Logo/FR-Logo.png'); */
 }
 
 .navbar-logo {
-    background-color: var(--navbar-text-color-focus);
+    /* background-image: url('../img/Logo/FR-Logo.png'); */
+    /* background-color: var(--navbar-text-color-focus); */
     border-radius: 50%;
     width: 30px;
     height: 30px;

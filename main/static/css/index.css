@@ -23,22 +23,80 @@
 
 
 
+/* 
+.card-container {
+  transition: all 300ms; 
+  filter: grayscale(0.4);
+} 
+.card-container:hover {
+  transform: scale(1.1); 
+  filter: grayscale(0);
+} */
 
 
 
 
+.twitch_embed{
+  display: flex;
+  margin-bottom: 200px;
+  justify-content: center;
+}
+
+.yt_embed{
+  display: flex;
+  justify-content: center;
+  margin-left: 175px;
+}
+
+
+
+#about-card {
+  transition: all 500ms; 
+  filter: grayscale(0.4);
+  padding-right: 20px;
+} 
+#about-card:hover {
+  transform: scale(1.1); 
+  filter: grayscale(0);
+}
 
 
 
 
+.my-hover:hover{
+transform: scale(1.1); 
+filter: grayscale(0);
+}
+
+.my-hover{
+  transition: all 500ms; 
+  filter: grayscale(0.4);
+  }
 
 
+.card-yt{
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.card-twitch{
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.card-twitter{
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.card-insta{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
 
 
-
-
-
-
-
+.twitter-feed{
+  padding-top: 40px;
+}
 
 

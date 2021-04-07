@@ -9,11 +9,12 @@
 {%  block content %}
 
 <div class="container">
-
+<p class="content" style="white">
 {% for GameReview in gamereviews %}
 {{GameReview.game_title}}
+<a class="btn btn-primary" href="{% url 'gamereview' GameReview.id %}">Read Review</a>
 {% endfor %}
-
+</p>
 
 
 

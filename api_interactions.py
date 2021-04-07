@@ -19,3 +19,44 @@ def search_twitch(search_text):
     data = f'fields name , id; where id = {tuple(game_ids)};'
     pl2 = requests.post(url, headers=headers, data=data)
     return pl2.json()
+
+
+def select_game(game_id):
+    data = f'fields name , id, first_release_date, storyline, summary, url, parent_game ; where id = {game_id};'
+    pl2 = requests.post( url, headers=headers, data=data)
+    return pl2.json()[0]
+
+
+
+
+#  cover
+
+# expansions (?)
+
+# 
+
+# franchise (?)
+
+# genres
+
+# involved_companies
+
+# name
+
+# parent_game (?)
+
+# ports (?)
+
+# screenshots
+
+# similar_games
+
+# standalone_expansions
+
+# storyline
+
+# summary
+
+# url
+
+# websites 

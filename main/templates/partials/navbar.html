@@ -36,8 +36,8 @@
                 <a class="nav-link" href="https://www.github.com/FiendRiver"target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
               <!-- </div> -->
 
-                                <li style="padding-left: 200px;" class="nav-item">
-                                  <a class="nav-link" href="./#about-card"> <h4> About</h4></a></li>
+                                <li style="padding-left: 100px;" class="nav-item">
+                                  <a class="nav-link" href="/#about-card"> <h4> About</h4></a></li>
                                   <li class="nav-item">
                                     <a class="nav-link" href="https://streamelements.com/fiendriver-5321/tip"target="_blank"><h4>Donate</h4></a></li>
                                     <li class="nav-item">
@@ -46,6 +46,8 @@
                                         <a class="nav-link" href="/gallery"> <h4>Gallery</h4> </a></li>
                                         <li class="nav-item">
                                           <a class="nav-link" href="/gamereviews"> <h4>Reviews</h4> </a></li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" href="/portfolio"> <h4>Portfolio</h4></a></li>
                                         {% if user.is_authenticated %}
                                         <li class="nav-item">
                                           <a class="nav-link" href="{% url 'dashboard' %}"> <h4>Dashboard</h4> </a></li>
@@ -57,7 +59,7 @@
                                               {% endif %}
 
                                               <li class="nav-item">
-                                                <a class="nav-link" href="#Contact"> <h4>Contact</h4> </a></li>
+                                                <a class="nav-link" href="/#contact-form"> <h4>Contact</h4> </a></li>
                                         
                                                 </ul>
                                               </div>

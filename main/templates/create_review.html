@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block content %}
+
+<h1>Creating review for: {{game.name}}</h1>
+<h4>{{game.first_release_date}}</h4>
+<h4>{{game.storyline}}</h4>
+<h4>{{game.summary}}</h4>
+<h4>{{game.url}}</h4>
+
+<form action="" method = 'POST'>
+    {% csrf_token %}
+   {{form}}
+<button>submit</button>
+</form>
+
+
+    
+
+{% endblock %}

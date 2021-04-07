@@ -1,0 +1,9 @@
+.my-hover:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.my-hover {
+  transition: all 500ms;
+  filter: grayscale(0.4);
+}

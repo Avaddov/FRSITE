@@ -31,22 +31,50 @@
         <a href="/submit"><button type="button" class="btn btn-danger">Submit {{category.name}}</button></a>
     {% for media in category.mediaobject_set.all %}
 <div class="col-4">
-
+    <button type='button' data-toggle="modal" data-target="#exampleModal">Launch Modal</button>s
     <div class="card bg-dark text-white">
-        <img src="{{media.file.url}}" class="card-img" alt="...">
+
+        <img src="{{media.file.url}}" class="card-img" alt="..."> 
+
         <div class="card-img-overlay">
           <h5 class="card-title">{{media.title}}</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text">Last updated 3 mins ago</p>
+          <p class="card-text"></p>
+          <p class="card-text"></p>
+        </div>
+      </div>
+
+    </div>
+      <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
+  </div>
     {% endfor %}
 </div>
     {% endfor %}
 </div>
+
 {% endblock %}
 
+
+
+
+  
 
 
 

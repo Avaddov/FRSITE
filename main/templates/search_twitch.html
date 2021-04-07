@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block content %}
+
+
+<form action="" method = 'POST'>
+    {% csrf_token %}
+    <input type="text" name="gamename">
+<button>submit</button>
+</form>
+
+
+
+{% for game in games %}
+    <p style="color: white;">
+        game: {{game.name}}
+    </p>
+
+    <p style="color: white;">
+        twitchID: {{game.id}}
+    </p>
+<a class="btn btn-primary" href="{% url 'create_review' game.id %}">Review This Game</a>
+{% endfor %}
+    
+
+{% endblock %}

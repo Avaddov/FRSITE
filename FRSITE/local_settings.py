@@ -10,7 +10,6 @@ SECRET_KEY = '$ku-7=zril351boce5l0=0ra0vg5^+*j^a657c!a*$hsco2mte'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 DATABASES = {

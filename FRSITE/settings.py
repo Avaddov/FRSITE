@@ -24,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
+ALLOWED_HOSTS = ['localhost', '127.0.0.1:8000', 'safe-everglades-39397.herokuapp.com']
 
 # Application definition
 

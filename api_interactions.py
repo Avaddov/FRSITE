@@ -22,8 +22,12 @@ def search_twitch(search_text):
 
 
 def select_game(game_id):
-    data = f'fields name , id, first_release_date, storyline, summary, url, parent_game ; where id = {game_id};'
+    data = f'fields name , id, first_release_date, storyline, summary, url, parent_game, cover; where id = {game_id};'
     pl2 = requests.post( url, headers=headers, data=data)
+    cover_id = pl2.json()[0]['cover']
+    data = f'fields  url; where id = {cover_id};'
+    pl3 = requests.post( 'https://api.igdb.com/v4/covers', headers=headers, data=data)
+    print(pl3.json()[0])
     return pl2.json()[0]
 
 

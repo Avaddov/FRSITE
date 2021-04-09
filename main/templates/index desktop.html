@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{%  block content %}
+
+
+<div class="container">
+
+
+
+
+  <h1 style="color: aliceblue;">HELLO FROM INDEX</h1>
+
+  <div class="row">
+<!-- STREAM EMBED -->
+    <div class= "twitch_embed my-hover">
+
+      <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+      <div id="<player div ID>"></div>
+      <script type="text/javascript">
+      var options = {
+          width: 1280,
+          height: 800,
+          channel: "fiendriver",
+      };
+      var player = new Twitch.Player("<player div ID>", options);
+      player.setVolume(0.5);
+      </script>
+
+    </div>
+
+    <iframe src="https://www.twitch.tv/embed/fiendriver/chat?parent=127.0.0.1:8000"
+      height="500"
+      width="350">
+    </iframe>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+
+      <div class="row m-2">
+        <div class="col my-2">
+          <div class="card-yt my-hover">
+          <a href="https://www.youtube.com/FiendRiver"target="_blank" style="color: white; text-decoration: none;">
+            <div class="card text-center bg-dark text-white my-hover" style="width: 18rem;">
+              <div class="card-body">
+                <img src="static\img\yt-card.png" class="card-img-top" alt="...">
+                <h5 class="card-title">YouTube</h5>
+                <h6 class="card-text">900 SUBSCRIBERS</h6>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col my-2">
+          <div class="card-twitch my-hover">
+          <a href="https://www.twitch.tv/FiendRiver"target="_blank" style="color: white; text-decoration: none;">
+            <div class="card text-center bg-dark text-white my-hover" style="width: 18rem;">
+              <div class="card-body">
+                <img src="static\img\twitch-card.png" class="card-img-top" alt="...">
+                <h5 class="card-title">Twitch</h5>
+                <h6 class="card-text">3K FOLLOWERS</h6>
+                </div>
+                </div>
+                </a>
+              </div>
+        </div>
+
+
+      </div>
+      
+      
+      
+    </div>
+    <div class="col-sm-12">
+      <div class= "yt_embed my-hover">
+
+        <iframe class="latestVideoEmbed" vnum='0' cid="UC1gEY9wgPqD0ak3Jp6jYDww" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+        function loadVideo(iframe) {
+        $.getJSON(reqURL + iframe.getAttribute('cid'),
+            function(data) {
+            var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+            console.log(videoNumber);
+            var link = data.items[videoNumber].link;
+            id = link.substr(link.indexOf("=") + 1);
+            iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+            }
+        );
+        }
+        var iframes = document.getElementsByClassName('latestVideoEmbed');
+        for (var i = 0, len = iframes.length; i < len; i++) {
+        loadVideo(iframes[i]);
+        }
+        </script>
+    
+    </div>
+      
+    </div>
+    <div class="col-2">
+      <div class="row m-2" >
+        <div class="col my-2">
+          <div class="card-twitter my-hover">
+          <a href="https://www.twitter.com/FiendRiver"target="_blank" style="color: white; text-decoration: none;">
+            <div class="card text-center bg-dark text-white " style="width: 18rem;">
+              <div class="card-body">
+                <img src="static\img\twitter-card.png" class="card-img-top" alt="...">
+                <h5 class="card-title">Twitter</h5>
+                <h6 class="card-text">1.3K FOLLOWERS</h6>
+                </div>
+              </div>
+                </a>
+              </div>
+              
+
+           
+       
+        <div class="col my-2">
+          <div class="card-insta my-hover">
+        <a href="https://www.instagram.com/FiendRiver"target="_blank" style="color: white; text-decoration: none;">
+          <div class="card text-center bg-dark text-white" style="width: 18rem;">
+            <div class="card-body">
+              <img src="static\img\insta-card.png" class="card-img-top" alt="...">
+              <h5 class="card-title">Instagram</h5>
+              <h6 class="card-text">400 FOLLOWERS</h6>
+            </div>
+          </div>
+              </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>  
+    
+
+
+
+
+
+
+
+
+  <div class="row">
+      <div class="col-8">
+        <div id="about-card">
+          <div class="row g-0 bg-dark position-relative">
+            <div class="col-md-6 mb-md-0 p-md-4">
+              <img src="/static/img/PFP.jpg" class="w-100" alt="...">
+            </div>
+            <div class="col-md-6 p-4 ps-md-0">
+              <h5 class="mt-0">Columns with stretched link</h5>
+              <p style="color: aliceblue;">        I am FiendRiver (Dōv/Joe) <br>
+                Professional Competitive Pokémon Master, <br>
+                National Pokémon Champion (2015-2019), <br>
+
+                Nintendo Israel Ambassador <br></p>
+              <a href="https://www.youtube.com/FiendRiver" class="stretched-link" style="color:white; text-decoration: none;"><h5>Subscribe on YouTube</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="twitter-feed my-hover">
+
+          <a class="twitter-timeline" data-width="800" data-height="500" data-theme="dark" href="https://twitter.com/FiendRiver?ref_src=twsrc%5Etfw">Tweets by FiendRiver</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
+      </div>
+      </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/channel/UC1gEY9wgPqD0ak3Jp6jYDww/live" frameborder="0" allowfullscreen></iframe> -->
+
+<!-- SOCIALS PANEL -->
+
+
+
+
+
+                
+
+ 
+                
+    
+                
+    
+            
+     
+
+
+
+
+
+
+
+<div id="card-container">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+      
+
+    </div>
+</div>
+
+
+<!-- ABOUT ME -->
+
+
+
+<div class="about" style="color: white; font-weight: 600;">
+    <p>
+
+    </p>
+
+</div>
+
+<!-- PARTNERS -->
+
+<!-- TWITTER FEED EMBED -->
+
+
+<!-- CONTACT FORM -->
+
+<div id="contact-form">
+<form class="contact-form my-hover" >
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label" style="color: white;">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@mail.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label" style="color: white;">Message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your Message..."></textarea>
+</div>
+<button type="submit" class="btn btn-danger" >Submit</button>
+</form>
+</div>
+
+
+
+
+
+<script src="{% static 'js/index.js' %}"></script>
+
+</div>
+{% endblock %}
+
+
+
+
+
+    
+    
+    
+
+    

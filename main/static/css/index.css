@@ -1,18 +1,15 @@
-
-
-
-#card-container{
-    size: 10rem;
-    display: flex;
-    justify-content: right;
-    min-height: 60px;
-    max-height: 500px;
-    min-width: 80px;
-    max-width: 500px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-left: 50px;
-}
+/* #card-container {
+  size: 10rem;
+  display: flex;
+  justify-content: right;
+  min-height: 60px;
+  max-height: 500px;
+  min-width: 80px;
+  max-width: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 50px;
+} */
 
 /* 
 #about-card{
@@ -20,8 +17,6 @@
   display: flex;
   justify-content: left;
 } */
-
-
 
 /* 
 .card-container {
@@ -36,67 +31,71 @@
 
 
 
-.twitch_embed{
+
+
+
+
+
+
+/* .twitch_embed {
   display: flex;
   margin-bottom: 200px;
   justify-content: center;
 }
 
-.yt_embed{
+.yt_embed {
   display: flex;
   justify-content: center;
   margin-left: 175px;
 }
 
-
-
 #about-card {
-  transition: all 500ms; 
+  transition: all 500ms;
   filter: grayscale(0.4);
   padding-right: 20px;
-} 
+}
 #about-card:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
   filter: grayscale(0);
 }
 
-
-
-
-.my-hover:hover{
-transform: scale(1.1); 
-filter: grayscale(0);
+.my-hover:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
 }
 
-.my-hover{
-  transition: all 500ms; 
+.my-hover {
+  transition: all 500ms;
   filter: grayscale(0.4);
-  }
+}
 
-
-.card-yt{
+.card-yt {
   padding-right: 20px;
   padding-bottom: 20px;
 }
 
-.card-twitch{
+.card-twitch {
   padding-right: 20px;
   padding-top: 20px;
 }
 
-.card-twitter{
+.card-twitter {
   padding-left: 20px;
   padding-bottom: 20px;
 }
-.card-insta{
+.card-insta {
   padding-top: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
 }
 
-
-.twitter-feed{
+.twitter-feed {
   padding-top: 40px;
 }
 
-
+@media screen and (min-width: 500px) {
+  .twitch_embed {
+    width: 200px;
+    height: 200px;
+  }
+} */

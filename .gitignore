@@ -3,3 +3,6 @@ db.sqlite3
 FRSITE_VENV/
 
 media/
+FRSITE/local_settings.py
+
+

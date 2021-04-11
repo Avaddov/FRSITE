@@ -1,9 +1,19 @@
-.my-hover:hover {
-  transform: scale(1.1);
-  filter: grayscale(0);
-}
 
 .my-hover {
   transition: all 500ms;
   filter: grayscale(0.4);
 }
+
+.my-hover:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+
+.shirt1 {
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+
+.

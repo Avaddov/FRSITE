@@ -34,6 +34,7 @@ class MediaObject(models.Model):
 
 class GameReview(models.Model):
     header = models.ImageField(null=True)
+    cover = models.URLField(null=True)
     game_title = models.CharField(max_length=200, null=True)
     headline = models.CharField(max_length=200, null=True)
     author = models.CharField(max_length=200, null=True)

@@ -1,48 +1,93 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %} 
 
+{% endblock %} 
 
-{% extends 'base.html' %}
-{% load static %}
-{%  block css %}
-
-{% endblock %}
-
-{%  block content %}
+{% block content %}
 
 <div class="container">
+  <div class="row">
+    <div class="ds-header">
+      <div
+        class="
+          field
+          field--name-dynamic-token-fieldnode-game-as-title
+          field--type-ds
+          field--label-hidden
+          gi5-dynamic-token-fieldnode-game-as-title gi5-ds
+          field__item
+        "
+      >
+        <h1 class="page-title">{{GameReview.game_title}}</h1>
+      </div>
 
-{{GameReview.header}}
-{{GameReview.game_title}}
-{{GameReview.headline}}
+      <div>
+        <div class="headline">
+            {{GameReview.headline}} 
+        </div>
+      </div>
 
-{{GameReview.author}}
-{{GameReview.publish_date}}
-{{GameReview.publisher}}
-{{GameReview.developer}}
-{{GameReview.first_release_date}}
-{{GameReview.release_date}}
-{{GameReview.reviewed_on}}
-{{GameReview.platforms}}
-{{GameReview.content_block1}}
-{{GameReview.media_block1}}
-{{GameReview.content_block2}}
-{{GameReview.media_block2}}
-{{GameReview.content_block3}}
-{{GameReview.score}}
-{{GameReview.concept}}
-{{GameReview.visuals}}
-{{GameReview.sound}}
-{{GameReview.playability}}
-{{GameReview.entertainment_value}}
-{{GameReview.replay_value}}
+      <div>
+        <div class="author-details">
+          by {{GameReview.author}} on {{GameReview.reviewed_on}}
+        </div>
+      </div>
 
+      <div>
+        <div class="views-element-container">
+          <div>
+            <div class="view-content">
+              <div>
+                <div class="views-field views-field-nothing">
+                  <span class="field-content">
+                    <div class="game-details">
+                      <div class="game-details-publisher">
+                        <span>Publisher:</span>
+                        {{GameReview.publisher}}
+                      </div>
+                      <div class="game-details-developer">
+                        <span>Developer:</span>
+                        {{GameReview.developer}}
+                      </div>
 
+                      <div class="game-details-release">
+                        <span>Release:</span>
+                        {{GameReview.first_release_date}}
+                      </div>
 
+                      <div class="game-details-rating">
+                        <!-- <span>Rating:</span>
+                        Mature -->
+                      </div>
+                      <div class="game-details-reviewedon">
+                        <!-- <span>Reviewed on:</span> PlayStation 5 -->
+                      </div>
+                      <div class="game-details-platform">
+                        <span>Also on:</span>
+                        {{GameReview.platforms}}
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
 
-
-
-
-
-
-
-</div> 
-{% endblock %}
+            {{GameReview.header}} 
+            
+            {{GameReview.publish_date}} 
+             
+            {{GameReview.release_date}} 
+             {{GameReview.content_block1}}
+            {{GameReview.media_block1}} {{GameReview.content_block2}}
+            {{GameReview.media_block2}} {{GameReview.content_block3}}
+            {{GameReview.score}} {{GameReview.concept}} {{GameReview.visuals}}
+            {{GameReview.sound}} {{GameReview.playability}}
+            {{GameReview.entertainment_value}} {{GameReview.replay_value}}
+          </div>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -27,8 +27,11 @@ def select_game(game_id):
     cover_id = pl2.json()[0]['cover']
     data = f'fields  url; where id = {cover_id};'
     pl3 = requests.post( 'https://api.igdb.com/v4/covers', headers=headers, data=data)
+    game_data = pl2.json()[0].copy()
+    game_data['cover'] = pl3.json()[0]['url']
+
     print(pl3.json()[0])
-    return pl2.json()[0]
+    return game_data
 
 
 

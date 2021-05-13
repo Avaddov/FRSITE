@@ -48,7 +48,7 @@
                                           <a class="nav-link" href="/gamereviews"> <h4>Reviews</h4> </a></li>
                                           <li class="nav-item">
                                             <a class="nav-link" href="/portfolio"> <h4>Portfolio</h4></a></li>
-                                        {% if user.is_authenticated %}
+                                        <!-- {% if user.is_authenticated %}
                                         <li class="nav-item">
                                           <a class="nav-link" href="{% url 'dashboard' %}"> <h4>Dashboard</h4> </a></li>
                                           <li class="nav-item">
@@ -56,7 +56,7 @@
                                             {% else %}
                                             <li class="nav-item">
                                               <a class="nav-link" href="{% url 'login' %}"> <h4>Login</h4> </a></li>
-                                              {% endif %}
+                                              {% endif %} -->
 
                                               <li class="nav-item">
                                                 <a class="nav-link" href="/#contact-form"> <h4>Contact</h4> </a></li>
@@ -67,112 +67,4 @@
 
 
 
-                                          </nav>
-
-                                <!-- <div class="navbar-right"></div> -->
-
-
-
-
-                                
-
-
-<!-- 
-
-  <header id="navbar">
-    <nav class="navbar-container container">
-      <a href="/" class="home-link">
-        <div class="navbar-logo"><img src="
-          {% static 'img/logo/FR-Logo.png' %}" alt="" style="height: 100px;">
-        </div>
-        FiendRiver
-      </a>
-
-      <div class="navbar-menu">
-        <ul class="navbar-links">
-          <li class="navbar-item"><a class="navbar-link" href="https://www.youtube.com/FiendRiver"target="_blank"><i class="fab fa-youtube"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.twitch.tv/FiendRiver"target="_blank"><i class="fab fa-twitch"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.twitter.com/FiendRiver"target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.instagram.com/FiendRiver"target="_blank"><i class="fab fa-instagram"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.facebook.com/FiendRiver"target="_blank"><i class="fab fa-facebook"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.patreon.com/FiendRiver"target="_blank"><i class="fab fa-patreon"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://discord.gg/dG7mcKP"target="_blank"><i class="fab fa-discord"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.guilded.gg/r/zzORL8ddDR?i=Vmyw9914"target="_blank"><i class="fab fa-guilded"></i></a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://www.github.com/FiendRiver"target="_blank"><i class="fab fa-github"></i></a></li>
-        <!-- </ul> -->
-
-        <!-- <button type="button" class="navbar-toggle" aria-label="Open navigation menu">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button> -->
-<!--  
-        <div class="navbar-right"></div> -->
-        <!-- <ul class="navbar-links"> -->
-          <!-- <li style="padding-left: 200px;" class="navbar-item"><a class="navbar-link" href="#About">About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="https://streamelements.com/fiendriver-5321/tip"target="_blank">Donate</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/merch">Merch</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="/gallery">Gallery</a></li>
-          {% if user.is_authenticated %}
-          <li class="navbar-item"><a class="navbar-link" href="{% url 'dashboard' %}">Dashboard</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
-          {% else %}
-          <li class="navbar-item"><a class="navbar-link" href="{% url 'login' %}">Login</a></li>
-          {% endif %}
-          <li class="navbar-item"><a class="navbar-link" href="#Contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>  
-</nav>  -->
-
-
-<!-- 
-
-
-    <nav>
-      <div class="nav-wrapper  #263238 blue-grey darken-4">
-        <a href="index" class="brand-logo"><img src="{% static 'img/logo/FR-Logo.png'%}" alt="" width="180px" height="120px" ></a>
-        <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <ul class="navbar-links">
-            <li><a href="https://www.youtube.com/FiendRiver"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="https://www.twitch.tv/FiendRiver"><i class="fab fa-twitch"></i></a></li>
-            <li><a href="https://www.twitter.com/FiendRiver"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.instagram.com/FiendRiver"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com/FiendRiver"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://www.patreon.com/FiendRiver"><i class="fab fa-patreon"></i></a></li>
-            <li><a href="https://discord.gg/dG7mcKP"><i class="fab fa-discord"></i></a></li>
-            <li><a href=""><i class="fab fa-guilded"></i></a></li>
-            <li><a href="https://www.github.com/FiendRiver"><i class="fab fa-github"></i></a></li>
-
-            <li style="padding-left: 200px;" class="navbar-item"><a class="navbar-link" href="#About">About</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="/">Donate</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="/merch">Merch</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="/gallery">Gallery</a></li>
-            {% if user.is_authenticated %}
-            <li class="navbar-item"><a class="navbar-link" href="{% url 'dashboard' %}">Dashboard</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-            <li class="navbar-item"><a class="navbar-link" href="{% url 'login' %}">Login</a></li>
-            {% endif %}
-            <li class="navbar-item"><a class="navbar-link" href="/">Contact</a></li>
-
-        </ul>
-      </div>
-    </nav>
-  
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-
-
-
-
- -->
-
-<!-- 
-</header>
- -->
+                                          </nav>        

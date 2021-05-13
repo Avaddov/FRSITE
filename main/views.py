@@ -76,6 +76,7 @@ def create_review(request, twitch_id):
             # review.storyline=game['storyline']
             review.summary=game['summary']
             review.url=game['url']
+            review.cover=game['cover']
             review.save()
             return redirect('gamereviews')
         return render(request, 'create_review.html', {'game':game, 'form':form})

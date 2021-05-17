@@ -15,3 +15,5 @@ urlpatterns = [
     path('create_review/<int:twitch_id>', views.create_review, name='create_review')
 
 ]
+
+#

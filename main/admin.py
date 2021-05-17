@@ -11,3 +11,6 @@ admin.site.register(MediaObject)
 admin.site.register(MediaCategory)
 
 admin.site.register(GameReview)
+
+
+#.

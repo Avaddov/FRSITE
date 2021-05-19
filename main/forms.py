@@ -13,6 +13,6 @@ class MediaObjectForm(forms.ModelForm):
 class GameReviewForm(forms.ModelForm):
     class Meta:
         model = GameReview
-        fields = ['header', 'game_title', 'headline', 'author', 'publish_date', 'publisher', 'developer', 'release_date', 'reviewed_on', 'platforms', 
+        fields = ['header', 'headline', 'author', 'reviewed_on', 'platforms', 
         'content_block1',  'media_block1', 'content_block2', 'media_block2', 'content_block3', 'summary',  
         'score', 'concept', 'visuals', 'sound', 'playability', 'entertainment_value', 'replay_value'  ]

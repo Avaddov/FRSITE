@@ -38,7 +38,7 @@ class GameReview(models.Model):
     game_title = models.CharField(max_length=200, null=True, blank=True)
     headline = models.CharField(max_length=200, null=True, blank=True)
     author = models.CharField(max_length=200, null=True, blank=True)
-    publish_date = models.DateTimeField(null=True, blank=True)
+    publish_date = models.DateTimeField(auto_now_add=True)
     publisher = models.CharField(max_length=200, null=True, blank=True)
     developer = models.CharField(max_length=200, null=True, blank=True)
     first_release_date = models.DateTimeField(null=True, blank=True)
